@@ -43,23 +43,36 @@
                             right:'src/assets/right.png'
                         },
                     ],
-                    listAbout:[
-                            {
-                                image: 'src/assets/w-1.png',
-                                title:'Safety First',
-                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
-                            },
-                            {
-                                image: 'src/assets/w-2.png',
-                                title:'Play Yards',
-                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
-                            },
-                            {
-                                image: 'src/assets/w-3.png',
-                                title:'Monitor Your Pets',
-                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
-                            }
-                        ]
+                    
+                    textChoose:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout',      
+                    imageChoose:[ 'src/assets/w-1.png','src/assets/w-2.png', 'src/assets/w-3.png'],
+                    titleChoose:['Safety First','Play Yards','Monitor Your Pets'],
+                    reviews:[
+                        {
+                            fullNameReview:'Over 8000  customers with 5-star review',
+                            fullTextReview:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
+                        },
+                        {
+                            fullName:'Great place',
+                            fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
+                            fullImage:'src/assets/t1.png',
+                            smallName:'Tobias May',
+                            smallText:'ul/ux designer'
+                        },
+                        {
+                            fullName:'Great place',
+                            fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
+                            fullImage:'src/assets/t1.png',
+                            smallName:'Tobias May',
+                            smallText:'ul/ux designer'
+                        }
+                    ]
+                                
+                            
+                            
+                                
+                            
+                        
 
                     
 
@@ -119,7 +132,7 @@
                         <img :src="dogIcon.left" alt="dog-icon">
                     </div>
                     <div class="col-6">
-                        <h2>Dogmilo pet care services For your best friends</h2>
+                        <h2 class="text-center">Dogmilo pet care services For your best friends</h2>
                        <div class="d-flex">
                             <div class=" services " v-for="service in services">
                                 <div>
@@ -146,19 +159,60 @@
                         <img src="src/assets/why.png" alt="">
                     </div>
                     <div class="col-6">
-                        <div class="d-flex container-logo">
-                            <!-- <img class="logo" :src="dogIcon.logo" alt="dog-icon"> -->
-                            <h6>choose us</h6>
-                            <h2>WHY CHOOSE US?</h2>
-                            
-                            
+                        <h6>choose us</h6>
+                        <h2>WHY CHOOSE US?</h2>
+                        <div class="d-flex ">
+                            <img class="" :src="imageChoose[2]" alt="">
+                            <div>
+                                <h3>{{ titleChoose[0] }}</h3>
+                                <p>{{ textChoose }}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="logo" :src="imageChoose[1]" alt="">
+                            <div>
+                                <h3>{{ titleChoose[1] }}</h3>
+                                <p>{{ textChoose }}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="logo" :src="imageChoose[0]" alt="">
+                            <div>
+                                <h3>{{ titleChoose[2] }}</h3>
+                                <p>{{ textChoose }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="d-flex fifth-section">
+            <div class="container " v-for="review in reviews" >
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="d-flex justify-content-center">
+                                
+                                    <div>
+                                        <h4>{{ review.fullNameReview}}</h4>
+                                        <p>{{ review.fullTextReview }}</p>
+                                    </div>
+                                    <div>
+                                        <h5>{{ review.fullName }}</h5>
+                                        <p>{{ review.fullText }}</p>
+                                        <div>
+                                            <img :src="review.fullImage" alt="">
+                                            <div>
+                                                <h6>{{review.smallName}}</h6>
+                                                <p>{{review.smallText}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                        </div>
 
+                    </div>
+                </div>
+            </div>
         </section>
        
        
@@ -244,9 +298,14 @@
             padding: 5px;
         }
     }
-   .logo{
-    width: 100%;
-   }
+    .fifth-section{
+        max-width: 1000px;
+        margin: auto;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
     
  }
  
