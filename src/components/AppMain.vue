@@ -42,7 +42,26 @@
                             text:'the readble content of a page when looking at its layout',
                             right:'src/assets/right.png'
                         },
-                    ]
+                    ],
+                    listAbout:[
+                            {
+                                image: 'src/assets/w-1.png',
+                                title:'Safety First',
+                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
+                            },
+                            {
+                                image: 'src/assets/w-2.png',
+                                title:'Play Yards',
+                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
+                            },
+                            {
+                                image: 'src/assets/w-3.png',
+                                title:'Monitor Your Pets',
+                                text:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
+                            }
+                        ]
+
+                    
 
                     
 
@@ -57,8 +76,8 @@
 
 <template>
 
-    <main class="mt-5">
-        <section class="first-section">
+    <main class="mt-2">
+        <section class="first-section ">
             <img :src="backgroundImg" alt="backgroungImg">
             <div class="container-principale">
                 <h1>
@@ -94,7 +113,7 @@
         </section>
         <section class="third-section">
             <h5 class="text-center mt-5">Services</h5>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-3">
                         <img :src="dogIcon.left" alt="dog-icon">
@@ -120,8 +139,23 @@
                 </div>
             </div>
         </section>
-        <section>
-
+        <section class="mt-5 fourth-section" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="src/assets/why.png" alt="">
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex container-logo">
+                            <!-- <img class="logo" :src="dogIcon.logo" alt="dog-icon"> -->
+                            <h6>choose us</h6>
+                            <h2>WHY CHOOSE US?</h2>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section>
 
@@ -165,9 +199,13 @@
    
  }
  .second-section{
-    max-width: 1000px;
-    margin: auto;
+    // max-width: 1000px;
+    // margin: auto;
     // background-image: url('src/assets/dog-logo.png');
+    .container{
+        max-width: 1000px;
+        margin: auto;
+    }
     .dog-icon{
         height: 50px;
         width: 50px;
@@ -206,5 +244,10 @@
             padding: 5px;
         }
     }
+   .logo{
+    width: 100%;
+   }
+    
  }
+ 
 </style>
