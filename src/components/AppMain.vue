@@ -6,7 +6,46 @@
                 return{
                     backgroundImg:'src/assets/b.png',
                     aboutImg:'src/assets/about.png',
-                    dogIcon:'src/assets/dog-icon.png'
+                    dogIcon:{
+                        logo:'src/assets/dog-icon.png',
+                        right:'src/assets/dog-logo.png',
+                        left:'src/assets/dog-left.png'
+                    },
+                    services:[
+                        {
+                            image:'src/assets/d-1.png',
+                            title:'Pet Sitting',
+                            text:'the readble content of a page when looking at its layout',
+                            right:'src/assets/right.png'
+                        },
+                        {
+                            image:'src/assets/d-2.png',
+                            title:'Puppy Sitting',
+                            text:'the readble content of a page when looking at its layout',
+                            right:'src/assets/right.png'
+                        },
+                        {
+                            image:'src/assets/d-3.png',
+                            title:'Dog Walking',
+                            text:'the readble content of a page when looking at its layout',
+                            right:'src/assets/right.png'
+                        },
+                        {
+                            image:'src/assets/d-4.png',
+                            title:'Night Care',
+                            text:'the readble content of a page when looking at its layout',
+                            right:'src/assets/right.png'
+                        },
+                        {
+                            image:'src/assets/d-5.png',
+                            title:'Pet Sitting',
+                            text:'the readble content of a page when looking at its layout',
+                            right:'src/assets/right.png'
+                        },
+                    ]
+
+                    
+
                 }
             },
             
@@ -38,7 +77,7 @@
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center ml-5">
-                            <img class="dog-icon" :src="dogIcon" alt="DOG-ICON">
+                            <img class="dog-icon" :src="dogIcon.logo" alt="DOG-ICON">
                             <p class="about">About us</p>
                         </div>
                         <div class="d-flex flex-column align-items-center">
@@ -50,11 +89,36 @@
                 </div>
             </div>
             <div>
-                <img src="src/assets/dog-logo.png" alt="">
+                <img :src="dogIcon.right" alt="">
             </div>
         </section>
-        <section>
+        <section class="third-section">
+            <h5 class="text-center mt-5">Services</h5>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <img :src="dogIcon.left" alt="dog-icon">
+                    </div>
+                    <div class="col-6">
+                        <h2>Dogmilo pet care services For your best friends</h2>
+                       <div class="d-flex">
+                            <div class=" services " v-for="service in services">
+                                <div>
+                                    <img :src="service.image" alt="">
+                                    <h6>{{ service.title }}</h6>
+                                    <p>{{ service.text }}</p>
+                                    <img class="right" :src="service.right" alt="">
+                                    
+                                </div>
 
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-3">
+                        <img :src="dogIcon.right" alt="dog-icon">
+                    </div>
+                </div>
+            </div>
         </section>
         <section>
 
@@ -93,6 +157,9 @@
             color: white;
             border-radius: 10px 10px;
             padding: 5px;
+            &:hover{
+                background-color: #173b67;
+            }
         }
     }
    
@@ -106,8 +173,38 @@
         width: 50px;
         vertical-align: middle;
     }
-.about{
-    vertical-align: middle;
-}
+    .about{
+        vertical-align: middle;
+    }
+ }
+ .third-section{
+    background-color: #f5f5f5;
+    .services{
+        height: 100 px;
+        width: 20%;
+        background-color: #ce7c2a;
+        border-radius: 40%;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+        color: white;
+        img{
+            width: 50px;
+            height: 50px;
+            
+        }
+        &:hover{
+            background-color: #7f7045;
+            cursor: pointer;
+        }
+        .right{
+            width: 30px;
+            height: 30px;
+            background-color: #ffcc01;
+            border-radius: 50%;
+            vertical-align: middle;
+            padding: 5px;
+        }
+    }
  }
 </style>
