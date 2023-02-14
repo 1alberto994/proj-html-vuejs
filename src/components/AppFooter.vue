@@ -55,22 +55,24 @@
 
 <template>
 
-    <footer>
+    <footer class="p-5">
         <div class="d-flex form">
             <div>
                 <img src="src/assets/news.png" alt="">
             </div>
-            <div class="mb-3  input ">
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
 
       <div>
-        <ul class="d-flex ">
+        <ul class="d-flex  ">
             <li class="text-center" v-for="listInfo in listFooter">
                 <h3>{{listInfo.title}}</h3>
                 <a href="">{{ listInfo.text }}</a>
                 <a href="">{{ listInfo.arrayText }}</a>
+                
             </li>
         </ul>
       </div>
@@ -88,11 +90,11 @@ footer{
     .form{
         width: 300px;
         background-color: #ce7c2a;
-        padding: 30px;
+        padding: 10px;
         border-radius: 20px;
         position: absolute;
-        bottom: 50%;
-        left: 50%;
+        bottom: 80%;
+        left: 40%;
         .input{
             width: 800px;
 
@@ -101,6 +103,7 @@ footer{
         img{
             width: 100px;
             height:100px;
+            
         }
     }
     div{

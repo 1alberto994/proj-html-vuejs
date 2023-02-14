@@ -1,5 +1,5 @@
 <script>
-        
+      
         export default{
             name:'AppMain',
             data(){
@@ -80,6 +80,7 @@
 
                 }
             },
+            
             
         }  
 </script>
@@ -206,6 +207,7 @@
                                                 <p>{{review.smallText}}</p>
                                             </div>
                                         </div>
+                                       
                                     </div>
                                 
                         </div>
@@ -296,6 +298,13 @@
             border-radius: 50%;
             vertical-align: middle;
             padding: 5px;
+        }
+    }
+    .fourth-section{
+        max-width: 1000px;
+        img{
+            width: 50px;
+            height: 50px;
         }
     }
     .fifth-section{
