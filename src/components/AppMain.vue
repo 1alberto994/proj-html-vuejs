@@ -4,13 +4,21 @@
             name:'AppMain',
             data(){
                 return{
+                    // PRIMA SEZIONE
+
                     backgroundImg:'src/assets/b.png',
+
+                    // SECONDA SEZIONE
+
                     aboutImg:'src/assets/about.png',
                     dogIcon:{
                         logo:'src/assets/dog-icon.png',
                         right:'src/assets/dog-logo.png',
                         left:'src/assets/dog-left.png'
                     },
+
+                    // TERZA SEZIONE
+
                     services:[
                         {
                             image:'src/assets/d-1.png',
@@ -43,29 +51,39 @@
                             right:'src/assets/right.png'
                         },
                     ],
-                    
+
+                    // QUARTA SEZIONE
+
+
                     textChoose:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout',      
                     imageChoose:[ 'src/assets/w-1.png','src/assets/w-2.png', 'src/assets/w-3.png'],
                     titleChoose:['Safety First','Play Yards','Monitor Your Pets'],
+
+                    // QUINTA SEZIONE
+
                     reviews:[
                         {
                             fullNameReview:'Over 8000  customers with 5-star review',
-                            fullTextReview:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout'
+                            fullTextReview:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout',
+                            star:'★★★★★',
+                            fullImage:null
                         },
                         {
                             fullName:'Great place',
                             fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
                             fullImage:'src/assets/t1.png',
                             smallName:'Tobias May',
-                            smallText:'ul/ux designer'
+                            smallText:'ul/ux designer',
+                            starReview:'★★★★★'
                         },
-                        {
-                            fullName:'Great place',
-                            fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
-                            fullImage:'src/assets/t1.png',
-                            smallName:'Tobias May',
-                            smallText:'ul/ux designer'
-                        }
+                        // {
+                        //     fullName:'Great place',
+                        //     fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
+                        //     fullImage:'src/assets/t1.png',
+                        //     smallName:'Tobias May',
+                        //     smallText:'ul/ux designer',
+                        //     starReview:'★★★★★'
+                        // }
                     ]
                                 
                             
@@ -91,6 +109,9 @@
 <template>
 
     <main class="mt-2">
+
+    <!-- PRIMA SEZIONE -->
+
         <section class="first-section ">
             <img :src="backgroundImg" alt="backgroungImg">
             <div class="container-principale">
@@ -102,6 +123,9 @@
             </div>
 
         </section>
+
+    <!-- SECONDA SEZIONE -->
+
         <section class="second-section mt-5 d-flex">
             <div class="container">
                 <div class="row">
@@ -125,6 +149,9 @@
                 <img :src="dogIcon.right" alt="">
             </div>
         </section>
+
+    <!-- TERZA SEZIONE -->
+
         <section class="third-section">
             <h5 class="text-center mt-5">Services</h5>
             <div class="container-fluid">
@@ -153,30 +180,34 @@
                 </div>
             </div>
         </section>
+
+    <!-- QUARTA SEZIONE -->
+
         <section class="mt-5 fourth-section" >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-6">
-                        <img src="src/assets/why.png" alt="">
+                        <img class="why" src="src/assets/why.png" alt="">
                     </div>
                     <div class="col-6">
                         <h6>choose us</h6>
                         <h2>WHY CHOOSE US?</h2>
-                        <div class="d-flex ">
-                            <img class="" :src="imageChoose[2]" alt="">
-                            <div>
+                        <div class="d-flex mt-3 safety">
+                                <img class="logo" :src="imageChoose[2]" alt="">
+                                
+                            <div class="">
                                 <h3>{{ titleChoose[0] }}</h3>
                                 <p>{{ textChoose }}</p>
                             </div>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex mt-3  ">
                             <img class="logo" :src="imageChoose[1]" alt="">
                             <div>
                                 <h3>{{ titleChoose[1] }}</h3>
                                 <p>{{ textChoose }}</p>
                             </div>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex mt-3 monitor">
                             <img class="logo" :src="imageChoose[0]" alt="">
                             <div>
                                 <h3>{{ titleChoose[2] }}</h3>
@@ -187,7 +218,10 @@
                 </div>
             </div>
         </section>
-        <section class="d-flex fifth-section">
+
+    <!-- QUINTA SEZIONE -->
+
+        <section class="d-flex fifth-section mt-5">
             <div class="container " v-for="review in reviews" >
                 <div class="row">
                     <div class="col-12 text-center">
@@ -196,24 +230,48 @@
                                     <div>
                                         <h4>{{ review.fullNameReview}}</h4>
                                         <p>{{ review.fullTextReview }}</p>
+                                        <span>{{ review.star }}</span>
                                     </div>
                                     <div>
+                                        <span>{{ review.starReview }}</span>
                                         <h5>{{ review.fullName }}</h5>
                                         <p>{{ review.fullText }}</p>
-                                        <div>
-                                            <img :src="review.fullImage" alt="">
+                                        
+                                            <img class="full-image" :src="review.fullImage" alt="">
                                             <div>
                                                 <h6>{{review.smallName}}</h6>
                                                 <p>{{review.smallText}}</p>
                                             </div>
-                                        </div>
+                                        
                                        
                                     </div>
+                                    <div>
+                                        <span>{{ review.starReview }}</span>
+                                        <h5>{{ review.fullName }}</h5>
+                                        <p>{{ review.fullText }}</p>
+                                        
+                                            <img class="full-image" :src="review.fullImage" alt="">
+                                            <div>
+                                                <h6>{{review.smallName}}</h6>
+                                                <p>{{review.smallText}}</p>
+                                            </div>
+                                        
+                                       
+                                    </div>
+                                   
                                 
                         </div>
-
+                        
                     </div>
                 </div>
+            </div>
+            
+        </section>
+        <section>
+            <div class="d-flex justify-content-end">
+                <button>
+                                        <img src="src/assets/next.png" alt="">
+                </button>
             </div>
         </section>
        
@@ -300,22 +358,41 @@
             padding: 5px;
         }
     }
-    .fourth-section{
-        max-width: 1000px;
-        img{
-            width: 50px;
-            height: 50px;
+    
+ }
+ .fourth-section{
+        // max-width: 1000px;
+        .safety,.monitor,.play{
+            margin-top: 30px;
+        }
+        .why{
+            width: 100%;
+            height: 100%px;
+        }
+        .logo{
+            width: 100px;
+            height: 100px;
         }
     }
     .fifth-section{
-        max-width: 1000px;
-        margin: auto;
-        img{
+        // max-width: 1000px;
+        // margin: auto;
+        .full-image{
             width: 50px;
             height: 50px;
+            border-radius: 50%;
+        }
+        span{
+            color: #ffcc01;
         }
     }
-    
- }
+    button{
+        width: 50px;
+        height: 50px;
+        &:hover{
+            background-color: #ce7c2a;
+        }
+    }
+ 
  
 </style>

@@ -56,7 +56,7 @@
 <template>
 
     <footer class="p-5">
-        <div class="d-flex form">
+        <div class="d-flex form align-items-center">
             <div>
                 <img src="src/assets/news.png" alt="">
             </div>
@@ -75,8 +75,12 @@
                 
             </li>
         </ul>
+        
       </div>
-       
+      <hr>
+        <div class="text-center">
+            <em>Alberto Giardina</em>
+        </div>
 
     </footer>
 
@@ -93,7 +97,7 @@ footer{
         padding: 10px;
         border-radius: 20px;
         position: absolute;
-        bottom: 80%;
+        bottom: 90%;
         left: 40%;
         .input{
             width: 800px;
@@ -115,6 +119,9 @@ footer{
     }
     ul{
         list-style: none;
+    }
+    hr,em{
+        color: white;
     }
 }
 
