@@ -77,14 +77,6 @@
                             smallName:'Tobias May',
                             smallText:'ul/ux designer',
                             starReview:'★★★★★'
-                        },
-                        {
-                            fullName:'Great place',
-                            fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
-                            fullImage:'src/assets/t1.png',
-                            smallName:'Tobias May',
-                            smallText:'ul/ux designer',
-                            starReview:'★★★★★'
                         }
                     ]
                                 
@@ -239,8 +231,8 @@
 
     <!-- QUINTA SEZIONE -->
 
-        <section class=" fifth-section mt-5">
-            <div class="d-flex justify-content-between ">
+        <section class="d-flex fifth-section mt-5">
+            <div class="d-flex ">
                                     <div class="contenitore" v-for="review in reviews">
                                         <h4>{{ review.fullNameReview}}</h4>
                                         <p>{{ review.fullTextReview }}</p>
@@ -248,7 +240,7 @@
                                     </div>
                                     <div class="container" v-for="reviewUno in reviewsUno">
                                         <div class="row">
-                                            <div class="">
+                                            <div class="col-6 contenitore">
                                                 <span>{{ reviewUno.starReview }}</span>
                                                 <h5>{{ reviewUno.fullName }}</h5>
                                                 <p>{{ reviewUno.fullText }}</p>
@@ -265,7 +257,24 @@
                                         
                                        
                                             </div>
-                                            
+                                            <div class="col-6 contenitore">
+                                                <span>{{ reviewUno.starReview }}</span>
+                                                <h5>{{ reviewUno.fullName }}</h5>
+                                                <p>{{ reviewUno.fullText }}</p>
+                                                <div class="d-flex">
+                                                        <div>
+                                                            <img class="full-image" :src="reviewUno.fullImage" alt="">
+                                                        </div>
+                                                        <div>
+                                                            <h6>{{reviewUno.smallName}}</h6>
+                                                            <p>{{reviewUno.smallText}}</p>
+                                                        </div>
+                                                </div>
+                                                
+                                                
+                                        
+                                       
+                                            </div>
 
                                         </div>
                                             
