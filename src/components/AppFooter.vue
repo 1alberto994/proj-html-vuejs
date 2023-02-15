@@ -42,7 +42,18 @@
                     
                 </li>
                 <li>
-                    <font-awesome-icon icon="fa-brands fa-facebook" />
+                    <a class="m-2" href="">
+                        
+                        <font-awesome-icon icon="fa-brands fa-facebook" />
+                        
+                        
+                    </a>
+                    <a class="m-2" href="">
+                        <font-awesome-icon icon="fa-brands fa-telegram" />
+                    </a>
+                    <a class="m-2" href="">
+                        <font-awesome-icon icon="fa-brands fa-twitter" />
+                    </a>
                 </li>
             
             </ul>

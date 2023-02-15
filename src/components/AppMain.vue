@@ -94,7 +94,7 @@
             },
             activeSlide:0,
             methods:{
-                avantiImg(){
+                nextSlide(){
       
                 if(this.activeSlide==this.reviewsUno.length -1){
                 this.activeSlide=0
@@ -268,6 +268,7 @@
                                                         <div>
                                                             <h6>{{reviewUno.smallName}}</h6>
                                                             <p>{{reviewUno.smallText}}</p>
+                                                            
                                                         </div>
                                                 </div>
                                                 
@@ -281,7 +282,7 @@
                                         
                                     </div>
                                     <div class="d-flex justify-content-end align-items-end">
-                                        <button @click="avantiImg()">
+                                        <button @click="nextSlide()">
                                                                 <img src="src/assets/next.png" alt="">
                                         </button>
                                     </div>
