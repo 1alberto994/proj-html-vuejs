@@ -1,5 +1,5 @@
 <script>
-      
+      import Carousel from '../components/Carousel.vue';
         export default{
             name:'AppMain',
             data(){
@@ -92,22 +92,16 @@
 
                 }
             },
-            activeSlide:0,
-            methods:{
-                nextSlide(){
-      
-                if(this.activeSlide==this.reviewsUno.length -1){
-                this.activeSlide=0
-                this.activeSlide.classList.add('active')
-                }
-                else{
-                this.activeSlide++
-                }
-   }
+            
+            components:{
+                Carousel
             }
             
+        }
+       
             
-        }  
+            
+        
 </script>
 
 
@@ -238,60 +232,17 @@
                                         <p>{{ review.fullTextReview }}</p>
                                         <span>{{ review.star }}</span>
                                     </div>
-                                    <div class="container" v-for="reviewUno in reviewsUno">
-                                        <div class="row">
-                                            <div class=" contenitore">
-                                                <span>{{ reviewUno.starReview }}</span>
-                                                <h5>{{ reviewUno.fullName }}</h5>
-                                                <p>{{ reviewUno.fullText }}</p>
-                                        
-                                                <div class="d-flex">
-                                                        <div>
-                                                            <img class="full-image" :src="reviewUno.fullImage" alt="">
-                                                        </div>
-                                                        <div>
-                                                            <h6>{{reviewUno.smallName}}</h6>
-                                                            <p>{{reviewUno.smallText}}</p>
-                                                        </div>
-                                                </div>
-                                        
-                                       
-                                            </div>
-                                            <div class="col-6 contenitore">
-                                                <span>{{ reviewUno.starReview }}</span>
-                                                <h5>{{ reviewUno.fullName }}</h5>
-                                                <p>{{ reviewUno.fullText }}</p>
-                                                <div class="d-flex">
-                                                        <div>
-                                                            <img class="full-image" :src="reviewUno.fullImage" alt="">
-                                                        </div>
-                                                        <div>
-                                                            <h6>{{reviewUno.smallName}}</h6>
-                                                            <p>{{reviewUno.smallText}}</p>
-                                                            
-                                                        </div>
-                                                </div>
-                                                
-                                                
-                                        
-                                       
-                                            </div>
-                                            <div class="d-flex justify-content-end align-items-end">
-                                                <button @click="nextSlide()">
-                                                                        <img src="src/assets/next.png" alt="">
-                                                </button>
-                                            </div>
-                                        </div>
-                                            
-                                        
+                                    <div class=" col-8 ">
+                                        <Carousel/>
                                     </div>
-                                    
 
             </div>
             
             
         </section>
-       
+       <section>
+        
+       </section>
        
 
     </main>
@@ -415,11 +366,17 @@
             color: #ffcc01;
         }
     }
+    .carosello{
+        width: 300px;
+        height: 300px;
+        
+    }
     button{
         width: 50px;
         height: 50px;
+        background-color: #ce7c2a;
         &:hover{
-            background-color: #ce7c2a;
+            background-color:#444444;
         }
 
     }

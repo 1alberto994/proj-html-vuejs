@@ -70,6 +70,7 @@
  .info{
     background-color: #ce7c2a;
     height: 50px;
+    margin: auto;
     
     a{
         text-decoration: none;

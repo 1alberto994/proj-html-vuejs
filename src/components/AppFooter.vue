@@ -5,7 +5,7 @@
             data(){
                 return{
                    listFooter:['Get in touch','Have a question for us?'],
-                   listFooterUnno:['Support','Contact us','Online chat','whatsapp','Telegram','Snapchat'],
+                   listFooterUno:['Support','Contact us','Online chat','whatsapp','Telegram','Snapchat'],
                    listFooterDue:['About','About us','Blog','Carreer','Job','In press'],
                    listFooterTre:['Faq','Account','Order','Delivery','Payment','Return'],
                    listFooterQuattro:['Contact me','4500 mercantile plaza','+1(817)9013377','info@example.com']
@@ -56,6 +56,12 @@
                     </a>
                 </li>
             
+            </ul>
+            <ul class="m-2">
+                <li v-for= "listInfoUno in listFooterUno">
+                    
+                    <a href="" >{{ listInfoUno }}</a>
+                </li>
             </ul>
             <ul class="m-2">
                 <li v-for= "listInfoDue in listFooterDue">

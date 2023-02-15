@@ -1,6 +1,6 @@
 <script>
  export default{
-    name:'AppSectionDue',
+    name:'AppSect',
     data(){
         
     }

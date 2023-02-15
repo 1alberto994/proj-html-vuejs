@@ -8,6 +8,8 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Swiper,{Navigation,Pagination} from'swiper';
+import'swiper/css/bundle';
 export default{
     components:{
         FontAwesomeIcon,
@@ -17,5 +19,7 @@ export default{
 library.add(faUserSecret,  faFacebook, faTwitter, faTelegram, faPhone, faEnvelope);
 
 createApp(App)
-.component('font-awesome-icon', FontAwesomeIcon)
+
+
+.component('font-awesome-icon', FontAwesomeIcon,  Swiper)
 .mount('#app')
