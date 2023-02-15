@@ -240,7 +240,7 @@
                                     </div>
                                     <div class="container" v-for="reviewUno in reviewsUno">
                                         <div class="row">
-                                            <div class="col-6 contenitore">
+                                            <div class=" contenitore">
                                                 <span>{{ reviewUno.starReview }}</span>
                                                 <h5>{{ reviewUno.fullName }}</h5>
                                                 <p>{{ reviewUno.fullText }}</p>
@@ -276,16 +276,16 @@
                                         
                                        
                                             </div>
-
+                                            <div class="d-flex justify-content-end align-items-end">
+                                                <button @click="nextSlide()">
+                                                                        <img src="src/assets/next.png" alt="">
+                                                </button>
+                                            </div>
                                         </div>
                                             
                                         
                                     </div>
-                                    <div class="d-flex justify-content-end align-items-end">
-                                        <button @click="nextSlide()">
-                                                                <img src="src/assets/next.png" alt="">
-                                        </button>
-                                    </div>
+                                    
 
             </div>
             
@@ -302,17 +302,18 @@
 
  main{
     min-height: 200px;
-    position: relative;
+    
     img{
         object-fit: contain;
         width: 100%;
+        position: relative;
         
     }
     .container-principale{
        
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 20%;
         h1,p{
             color: white;
         }
