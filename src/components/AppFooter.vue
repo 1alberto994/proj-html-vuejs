@@ -4,44 +4,11 @@
             name:'AppFooter',
             data(){
                 return{
-                    listFooter:[
-                        {
-                            title:'Get in touch',
-                            text:"Have aquestion for us? we'll answer your problem here"
-                        },
-                        {
-                            title:'Support',
-                            arrayText:[
-                                {
-                                    lista:'Contact chat'
-                                },
-                                {
-                                    lista:'online chat'
-                                },
-                                {
-                                    lista:'Whatsapp'
-                                },
-                                {
-                                    lista:'Telegram'
-                                },
-                                {
-                                    lista:'Snapchat'
-                                }
-                            ]
-                        },
-                        {
-                            title:'About',
-                            arrayText:['About us','Blog','Carreer','Job']
-                        },
-                        {
-                            title:'Faq',
-                            arrayText:['Account','Order','Delivery','Payment','Return']
-                        },
-                        {
-                            title:'Contact me',
-                            arrayText:['via Giuseppe Garibaldi','+3910987654321','info@example.com']
-                        },
-                    ]
+                   listFooter:['Get in touch','Have a question for us?'],
+                   listFooterUnno:['Support','Contact us','Online chat','whatsapp','Telegram','Snapchat'],
+                   listFooterDue:['About','About us','Blog','Carreer','Job','In press'],
+                   listFooterTre:['Faq','Account','Order','Delivery','Payment','Return'],
+                   listFooterQuattro:['Contact me','4500 mercantile plaza','+1(817)9013377','info@example.com']
                     
                 }
             },
@@ -66,17 +33,39 @@
             </div>
         </div>
 
-      <div>
-        <ul class="d-flex  ">
-            <li class="text-center" v-for="listInfo in listFooter">
-                <h3>{{listInfo.title}}</h3>
-                <a href="">{{ listInfo.text }}</a>
-                <a href="">{{ listInfo.arrayText }}</a>
-                
-            </li>
-        </ul>
+        <div class="d-flex justify-content-center ">
+            <ul class="m-2" >
+                <li  v-for="listInfo in listFooter">
+                    
+                    <a href="">{{ listInfo }}</a>
+                    
+                    
+                </li>
+                <li>
+                    <font-awesome-icon icon="fa-brands fa-facebook" />
+                </li>
+            
+            </ul>
+            <ul class="m-2">
+                <li v-for= "listInfoDue in listFooterDue">
+                    
+                    <a href="" >{{ listInfoDue }}</a>
+                </li>
+            </ul>
+            <ul class="m-2">
+                <li v-for= "listInfoTre in listFooterTre">
+                    
+                    <a href="" >{{ listInfoTre}}</a>
+                </li>
+            </ul>
+            <ul class="m-2">
+                <li v-for= "listInfoQuattro in listFooterQuattro">
+                    
+                    <a href="" >{{ listInfoQuattro }}</a>
+                </li>
+            </ul>
         
-      </div>
+        </div>
       <hr>
         <div class="text-center">
             <em>Alberto Giardina</em>
@@ -88,17 +77,18 @@
 
 <style lang="scss" scoped>
 footer{
-    margin-top: 30px;
+    margin-top: 200px;
     background-color: #444444;
     position: relative;
     .form{
-        width: 300px;
+        width: 1000px;
         background-color: #ce7c2a;
         padding: 10px;
         border-radius: 20px;
         position: absolute;
         bottom: 90%;
-        left: 40%;
+        left: 20%;
+        right: 20%;
         .input{
             width: 800px;
 
@@ -114,11 +104,26 @@ footer{
         max-width: 1000px;
         margin: auto;
     }
-    h3{
-        color: #ce7c2a;
-    }
+    
+    
     ul{
         list-style: none;
+        li{
+            padding: 5px;
+            color: #444444;
+            a{
+                text-decoration: none;
+                
+                color: #ce7c2a;
+                
+            }
+
+            &:first-child{
+            font-size: 1.5rem;
+            
+        }
+        }
+        
     }
     hr,em{
         color: white;

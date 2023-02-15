@@ -66,7 +66,17 @@
                             fullNameReview:'Over 8000  customers with 5-star review',
                             fullTextReview:'It is a long established fact that a reader will be distructed by the readable content of a page when looking at its layout',
                             star:'★★★★★',
-                            fullImage:null
+                            
+                        },
+                    ],
+                    reviewsUno:[
+                    {
+                            fullName:'Great place',
+                            fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
+                            fullImage:'src/assets/t1.png',
+                            smallName:'Tobias May',
+                            smallText:'ul/ux designer',
+                            starReview:'★★★★★'
                         },
                         {
                             fullName:'Great place',
@@ -75,15 +85,7 @@
                             smallName:'Tobias May',
                             smallText:'ul/ux designer',
                             starReview:'★★★★★'
-                        },
-                        // {
-                        //     fullName:'Great place',
-                        //     fullText:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias dolore adipisci explicabo similique, eveniet quibusdam pariatur blanditiis nobis deserunt enim!',
-                        //     fullImage:'src/assets/t1.png',
-                        //     smallName:'Tobias May',
-                        //     smallText:'ul/ux designer',
-                        //     starReview:'★★★★★'
-                        // }
+                        }
                     ]
                                 
                             
@@ -98,6 +100,19 @@
 
                 }
             },
+            activeSlide:0,
+            methods:{
+                avantiImg(){
+      
+                if(this.activeSlide==this.reviewsUno.length -1){
+                this.activeSlide=0
+                this.activeSlide.classList.add('active')
+                }
+                else{
+                this.activeSlide++
+                }
+   }
+            }
             
             
         }  
@@ -190,9 +205,12 @@
                         <img class="why" src="src/assets/why.png" alt="">
                     </div>
                     <div class="col-6">
-                        <h6>choose us</h6>
+                        <div class="d-flex align-item-center" >
+                            <img class="dog-icon" :src="dogIcon.logo" alt="DOG-ICON">
+                            <h6>choose us</h6>
+                        </div>
                         <h2>WHY CHOOSE US?</h2>
-                        <div class="d-flex mt-3 safety">
+                        <div class="d-flex mt-3 p-5 safety">
                                 <img class="logo" :src="imageChoose[2]" alt="">
                                 
                             <div class="">
@@ -200,14 +218,14 @@
                                 <p>{{ textChoose }}</p>
                             </div>
                         </div>
-                        <div class="d-flex mt-3  ">
+                        <div class="d-flex mt- p-5  ">
                             <img class="logo" :src="imageChoose[1]" alt="">
                             <div>
                                 <h3>{{ titleChoose[1] }}</h3>
                                 <p>{{ textChoose }}</p>
                             </div>
                         </div>
-                        <div class="d-flex mt-3 monitor">
+                        <div class="d-flex mt-3 monitor p-5">
                             <img class="logo" :src="imageChoose[0]" alt="">
                             <div>
                                 <h3>{{ titleChoose[2] }}</h3>
@@ -221,58 +239,47 @@
 
     <!-- QUINTA SEZIONE -->
 
-        <section class="d-flex fifth-section mt-5">
-            <div class="container " v-for="review in reviews" >
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="d-flex justify-content-center">
-                                
-                                    <div>
+        <section class=" fifth-section mt-5">
+            <div class="d-flex justify-content-between ">
+                                    <div class="contenitore" v-for="review in reviews">
                                         <h4>{{ review.fullNameReview}}</h4>
                                         <p>{{ review.fullTextReview }}</p>
                                         <span>{{ review.star }}</span>
                                     </div>
-                                    <div>
-                                        <span>{{ review.starReview }}</span>
-                                        <h5>{{ review.fullName }}</h5>
-                                        <p>{{ review.fullText }}</p>
+                                    <div class="container" v-for="reviewUno in reviewsUno">
+                                        <div class="row">
+                                            <div class="">
+                                                <span>{{ reviewUno.starReview }}</span>
+                                                <h5>{{ reviewUno.fullName }}</h5>
+                                                <p>{{ reviewUno.fullText }}</p>
                                         
-                                            <img class="full-image" :src="review.fullImage" alt="">
-                                            <div>
-                                                <h6>{{review.smallName}}</h6>
-                                                <p>{{review.smallText}}</p>
-                                            </div>
-                                        
-                                       
-                                    </div>
-                                    <div>
-                                        <span>{{ review.starReview }}</span>
-                                        <h5>{{ review.fullName }}</h5>
-                                        <p>{{ review.fullText }}</p>
-                                        
-                                            <img class="full-image" :src="review.fullImage" alt="">
-                                            <div>
-                                                <h6>{{review.smallName}}</h6>
-                                                <p>{{review.smallText}}</p>
-                                            </div>
+                                                <div class="d-flex">
+                                                        <div>
+                                                            <img class="full-image" :src="reviewUno.fullImage" alt="">
+                                                        </div>
+                                                        <div>
+                                                            <h6>{{reviewUno.smallName}}</h6>
+                                                            <p>{{reviewUno.smallText}}</p>
+                                                        </div>
+                                                </div>
                                         
                                        
+                                            </div>
+                                            
+
+                                        </div>
+                                            
+                                        
                                     </div>
-                                   
-                                
-                        </div>
-                        
-                    </div>
-                </div>
+                                    <div class="d-flex justify-content-end align-items-end">
+                                        <button @click="avantiImg()">
+                                                                <img src="src/assets/next.png" alt="">
+                                        </button>
+                                    </div>
+
             </div>
             
-        </section>
-        <section>
-            <div class="d-flex justify-content-end">
-                <button>
-                                        <img src="src/assets/next.png" alt="">
-                </button>
-            </div>
+            
         </section>
        
        
@@ -321,8 +328,8 @@
         margin: auto;
     }
     .dog-icon{
-        height: 50px;
-        width: 50px;
+        height: 30px;
+        width: 30px;
         vertical-align: middle;
     }
     .about{
@@ -373,10 +380,21 @@
             width: 100px;
             height: 100px;
         }
+        .dog-icon{
+            height: 30px;
+            width: 30px;
+            vertical-align: middle;
+        }
     }
     .fifth-section{
-        // max-width: 1000px;
-        // margin: auto;
+        max-width: 1000px;
+        margin: auto;
+        .contenitore{
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+        
+        }
         .full-image{
             width: 50px;
             height: 50px;
@@ -392,6 +410,10 @@
         &:hover{
             background-color: #ce7c2a;
         }
+
+    }
+    .active{
+        background-color: #ce7c2a;
     }
  
  

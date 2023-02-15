@@ -20,6 +20,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <img :src="logo" alt="DogLOgo">
+                <font-awesome-icon icon="fa-brands fa-square-facebook" />
             </div>
             <div >
                 <ul class="d-flex">

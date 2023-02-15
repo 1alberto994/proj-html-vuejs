@@ -27,5 +27,5 @@
   <AppFooter/>
 </template>
 <style lang="scss" >
-@import "./styles/main.scss";
+@use "./styles/main.scss" as *;
 </style>
