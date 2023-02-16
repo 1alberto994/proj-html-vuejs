@@ -21,7 +21,7 @@ export default {
   },
 
   setup() {
-    const spaceBetween = 50;
+    const flexStart =50 ;
     const onProgress = (e) => {
       const [swiper, progress] = e.detail;
     };
@@ -30,7 +30,7 @@ export default {
     }
 
     return {
-      spaceBetween,
+      flexStart,
       onProgress,
       onSlideChange,
     };
@@ -46,7 +46,7 @@ export default {
    
   <swiper-container 
     :slides-per-view="3" 
-    :space-between="spaceBetween" 
+    :flex-start="flexStart" 
     :centered-slides="true" 
     :navigation="true"
     :breakpoints="{
@@ -221,9 +221,10 @@ export default {
 
 <style lang="scss" scoped>
 .contenitore{
-            width: 300px;
-            height: 300px;
-            margin: 10px;
+            width: auto;
+            height: auto;
+            margin: 5px;
+            overflow: hidden;
         
         }
         .full-image{

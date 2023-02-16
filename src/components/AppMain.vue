@@ -227,14 +227,14 @@
 
         <section class="d-flex fifth-section mt-5">
             <div class="d-flex ">
-                                    <div class="contenitore" v-for="review in reviews">
+                                    <div class="contenitore-star" v-for="review in reviews">
                                         <h4>{{ review.fullNameReview}}</h4>
                                         <p>{{ review.fullTextReview }}</p>
                                         <span>{{ review.star }}</span>
                                     </div>
-                                    <div class=" col-8 ">
-                                        <Carousel/>
-                                    </div>
+                                    
+                                        <Carousel class="col-8" />
+                                    
 
             </div>
             
@@ -352,9 +352,9 @@
         max-width: 1000px;
         margin: auto;
         .contenitore{
-            width: 300px;
-            height: 300px;
-            margin: 10px;
+            width: auto;
+            height: auto;
+            margin: 5px;
         
         }
         .full-image{
@@ -367,8 +367,9 @@
         }
     }
     .carosello{
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        
+        overflow: hidden;
         
     }
     button{
